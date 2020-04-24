@@ -3,7 +3,12 @@ import style from './index.module.css';
 
 const Footer = () => (
   <div className={style.container}>
-    2020
+    <span
+      className={style.top}
+      onClick={() => window.scrollTo(0, 0)}
+    >
+      &uarr; TOP &uarr;
+    </span>
   </div>
 );
 
