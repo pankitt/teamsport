@@ -4,6 +4,12 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
 .item {
   display: flex;
   align-items: center;
