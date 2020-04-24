@@ -1,28 +1,22 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
 import { SPORTS_LIST } from 'constants/pages';
+import { Link } from 'react-router-dom';
 import svgIcon from 'components/common/svgIcon';
 import style from './index.module.css';
 
-const Header = () => (
+const Menu = () => (
   <div className={style.container}>
-    <Link
-      className={style.linkSvg}
-      to="/"
-    >
-      {svgIcon.logo}
-    </Link>
     {SPORTS_LIST.length > 0 && SPORTS_LIST.map((sport) => (
-      <NavLink
+      <Link
         key={sport}
         to={`/${sport}`}
-        className={style.link}
-        activeClassName={style.active}
+        className={style.item}
       >
+        {svgIcon[sport]}
         {sport}
-      </NavLink>
+      </Link>
     ))}
   </div>
 );
 
-export default Header;
+export default Menu;
