@@ -13,6 +13,9 @@
   margin: 2px;
   padding: 2px;
 }
+.item:hover {
+  box-shadow: 1px 1px 1px var(--color-black);
+}
 .image {
   margin-right: 10px;
 }
