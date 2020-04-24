@@ -1,0 +1,4 @@
+export const LEAGUES = {
+  UEFA_CHAMPIONS_LEAGUE: 1,
+  UEFA_EUROPA_LEAGUE: 14
+};
