@@ -3,7 +3,7 @@ import style from './index.module.css';
 
 const Footer = () => (
   <div className={style.container}>
-    Footer
+    2020
   </div>
 );
 

@@ -1,14 +1,28 @@
 import React from 'react';
 import style from './index.module.css';
 
-const List = ({ league }) => {
-  console.log('Soccer', league);
-
-  return (
+const List = ({ league, title }) => (
+  <div>
+    <h3>{title}</h3>
     <div className={style.container}>
-      <h1>Soccer</h1>
+      {league.length > 0 && league.map(({
+        id,
+        logoUrl,
+        displayOfficialName,
+        countryName
+      }) => (
+        <div className={style.item} key={id}>
+          <div className={style.image}>
+            <img src={logoUrl} alt={displayOfficialName} />
+          </div>
+          <div>
+            {displayOfficialName}
+            <div className={style.country}>{countryName}</div>
+          </div>
+        </div>
+      ))}
     </div>
-  );
-};
+  </div>
+);
 
 export default List;

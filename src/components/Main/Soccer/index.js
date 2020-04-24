@@ -10,7 +10,7 @@ const Soccer = () => {
 
   return (
     <div className={style.container}>
-      <List league={UEFAChampionsLeague} />
+      <List league={UEFAChampionsLeague} title="UEFA Champions League" />
     </div>
   );
 };

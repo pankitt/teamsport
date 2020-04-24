@@ -4,7 +4,7 @@
 }
 html,
 body {
-  background: var(--color-white);
+  background: var(--color-gray);
   color: var(--color-black);
   border: none;
   height: 100%;
@@ -21,4 +21,5 @@ a {
   --color-black: #000;
   --color-blue: #34a2e1;
   --color-red: #FF0000;
+  --color-gray: #808080;
 }

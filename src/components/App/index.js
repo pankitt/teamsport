@@ -6,8 +6,10 @@ import style from './index.module.css';
 
 const App = () => (
   <div className={style.container}>
-    <Header />
-    <Main />
+    <div>
+      <Header />
+      <Main />
+    </div>
     <Footer />
   </div>
 );
