@@ -1,11 +1,16 @@
 .container {
 
 }
-.link {
-  color: var(--color-blue);
-  margin-right: 20px;
+.links {
+  display: flex;
+  margin-bottom: 20px;
 }
-.active {
+.link {
+  cursor: pointer;
+  color: var(--color-blue);
+  margin-right: 15px;
+}
+.link:hover {
   color: var(--color-black);
   border-bottom: 1px solid var(--color-black);
 }
