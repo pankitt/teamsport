@@ -1,9 +1,8 @@
 import React from 'react';
 import style from './index.module.css';
 
-const List = ({ league, title }) => (
+const List = ({ league }) => (
   <div>
-    <h3>{title}</h3>
     <div className={style.container}>
       {league.length > 0 && league.map(({
         id,

@@ -1,3 +1,11 @@
 .container {
 
 }
+.link {
+  color: var(--color-blue);
+  margin-right: 20px;
+}
+.active {
+  color: var(--color-black);
+  border-bottom: 1px solid var(--color-black);
+}
