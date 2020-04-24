@@ -8,7 +8,7 @@ export const useUefa = (league) => {
     let cleanup = false;
 
     const fetchData = async () => {
-      const { result = [] } = await getUefa({
+      const result = await getUefa({
         league
       });
       if (!cleanup) {

@@ -6,7 +6,7 @@ const List = ({ league }) => {
 
   return (
     <div className={style.container}>
-      Footer
+      <h1>Soccer</h1>
     </div>
   );
 };

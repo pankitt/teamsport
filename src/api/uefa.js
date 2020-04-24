@@ -1,6 +1,3 @@
-// https://comp.uefa.com/v1/competitions/1/seasons/current/teams?language=EN
-// https://comp.uefa.com/v1/competitions/undefined/seasons/current/teams?language=EN
-
 const makeRequest = (endpoint) => async () => {
   try {
     const response = await fetch(endpoint);
