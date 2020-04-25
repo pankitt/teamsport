@@ -1,0 +1,19 @@
+.container {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*.loader {
+  animation: scaling .7s infinite alternate;
+}
+
+@keyframes scaling {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}*/

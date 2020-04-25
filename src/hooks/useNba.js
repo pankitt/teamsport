@@ -3,6 +3,7 @@ import { getNba } from 'api';
 
 export const useNba = (league) => {
   const [teams, seTeams] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     let cleanup = false;
@@ -10,6 +11,7 @@ export const useNba = (league) => {
     const fetchData = async () => {
       const result = await getNba();
       if (!cleanup) {
+        setIsLoading(false);
         seTeams(result.league.standard.filter(({ isNBAFranchise }) => isNBAFranchise === true));
       }
     };
@@ -19,5 +21,5 @@ export const useNba = (league) => {
     return () => { cleanup = true; };
   }, [league]);
 
-  return teams;
+  return [teams, isLoading];
 };

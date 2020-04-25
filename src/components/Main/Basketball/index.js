@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { LEAGUES } from 'constants/leagues';
 import { useNba } from 'hooks';
+import { Loader } from 'components/common';
 import List from 'components/Main/Basketball/List';
 import style from 'components/Main/index.module.css';
 
 const Basketball = () => {
-  const UEFAChampionsLeague = useNba();
+  const [NBA, isLoading] = useNba();
   const [league, setLeague] = useState([]);
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState(LEAGUES.NBA.TITLE);
 
   useEffect(() => {
-    setLeague(UEFAChampionsLeague);
-    setTitle(LEAGUES.NBA.TITLE);
-  }, [UEFAChampionsLeague]);
+    setLeague(NBA);
+  }, [NBA]);
 
   const championsLeague = () => {
-    setLeague(UEFAChampionsLeague);
+    setLeague(NBA);
     setTitle(LEAGUES.NBA.TITLE);
   };
 
@@ -29,7 +29,7 @@ const Basketball = () => {
           {LEAGUES.NBA.TITLE}
         </span>
       </div>
-      <List league={league} title={title} />
+      {isLoading ? <Loader /> : <List league={league} title={title} />}
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { getUefa } from 'api';
 
 export const useUefa = (league) => {
   const [teams, seTeams] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     let cleanup = false;
@@ -12,6 +13,7 @@ export const useUefa = (league) => {
         league
       });
       if (!cleanup) {
+        setIsLoading(false);
         seTeams(result);
       }
     };
@@ -21,5 +23,5 @@ export const useUefa = (league) => {
     return () => { cleanup = true; };
   }, [league]);
 
-  return teams;
+  return [teams, isLoading];
 };

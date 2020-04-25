@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { LEAGUES } from 'constants/leagues';
 import { useUefa } from 'hooks';
+import { Loader } from 'components/common';
 import List from 'components/Main/Soccer/List';
 import style from 'components/Main/index.module.css';
 
 const Soccer = () => {
-  const UEFAChampionsLeague = useUefa(LEAGUES.UEFA_CHAMPIONS_LEAGUE.ID);
-  const UEFAEuropaLeague = useUefa(LEAGUES.UEFA_EUROPA_LEAGUE.ID);
+  const [UEFAChampionsLeague, isLoadingLC] = useUefa(LEAGUES.UEFA_CHAMPIONS_LEAGUE.ID);
+  const [UEFAEuropaLeague, isLoadingLE] = useUefa(LEAGUES.UEFA_EUROPA_LEAGUE.ID);
   const [league, setLeague] = useState([]);
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState(LEAGUES.UEFA_CHAMPIONS_LEAGUE.TITLE);
 
   useEffect(() => {
     setLeague(UEFAChampionsLeague);
-    setTitle(LEAGUES.UEFA_CHAMPIONS_LEAGUE.TITLE);
   }, [UEFAChampionsLeague]);
 
   const championsLeague = () => {
@@ -40,7 +40,7 @@ const Soccer = () => {
           {LEAGUES.UEFA_EUROPA_LEAGUE.TITLE}
         </span>
       </div>
-      <List league={league} title={title} />
+      {isLoadingLC || isLoadingLE ? <Loader /> : <List league={league} title={title} />}
     </div>
   );
 };
