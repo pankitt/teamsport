@@ -9,18 +9,18 @@ const List = ({ league = [], title }) => (
     </div>
     <div className={style.teams}>
       {league.length > 0 && league.map(({
-        id,
-        logoUrl,
-        displayOfficialName,
-        countryName
+        teamId,
+        tricode,
+        fullName,
+        confName
       }) => (
-        <div className={style.item} key={id}>
+        <div className={style.item} key={teamId}>
           <div className={style.image}>
-            <img src={logoUrl} alt={displayOfficialName} />
+            <img src={`https://www.nba.com/assets/logos/teams/primary/web/${tricode}.svg`} alt={fullName} />
           </div>
           <div>
-            {displayOfficialName}
-            <div className={style.country}>{countryName}</div>
+            {fullName}
+            <div className={style.country}>{confName}</div>
           </div>
         </div>
       ))}

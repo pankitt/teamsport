@@ -1,3 +1,47 @@
-.container {
+.links {
+  display: flex;
+  margin-bottom: 20px;
+}
+.link {
+  cursor: pointer;
+  color: var(--color-blue);
+  margin-right: 15px;
+}
+.link:hover {
+  color: var(--color-black);
+  text-decoration: underline;
+}
 
+.teams {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.item {
+  display: flex;
+  align-items: center;
+  width: 32%;
+  font-size: 18px;
+  border: 1px solid var(--color-black);
+  border-radius: 2px;
+  margin: 2px;
+  padding: 2px;
+}
+.item:hover {
+  box-shadow: 1px 1px 1px var(--color-black);
+}
+.image {
+  margin-right: 10px;
+  font-size: 8px;
+}
+.country {
+  font-size: 10px;
+  font-style: italic;
 }

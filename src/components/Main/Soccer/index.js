@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { LEAGUES } from 'constants/leagues';
 import { useUefa } from 'hooks';
 import List from 'components/Main/Soccer/List';
-import style from './index.module.css';
+import style from 'components/Main/index.module.css';
 
 const Soccer = () => {
   const UEFAChampionsLeague = useUefa(LEAGUES.UEFA_CHAMPIONS_LEAGUE.ID);
@@ -25,7 +25,7 @@ const Soccer = () => {
   };
 
   return (
-    <div className={style.container}>
+    <div>
       <div className={style.links}>
         <span
           className={style.link}
@@ -33,12 +33,12 @@ const Soccer = () => {
         >
           {LEAGUES.UEFA_CHAMPIONS_LEAGUE.TITLE}
         </span>
-        <div
+        <span
           className={style.link}
           onClick={europaLeague}
         >
           {LEAGUES.UEFA_EUROPA_LEAGUE.TITLE}
-        </div>
+        </span>
       </div>
       <List league={league} title={title} />
     </div>
