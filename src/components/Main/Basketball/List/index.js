@@ -16,7 +16,11 @@ const List = ({ league = [], title }) => (
       }) => (
         <div className={style.item} key={teamId}>
           <div className={style.image}>
-            <img src={`https://www.nba.com/assets/logos/teams/primary/web/${tricode}.svg`} alt={fullName} />
+            <img
+              src={`https://www.nba.com/assets/logos/teams/primary/web/${tricode}.svg`}
+              alt={fullName}
+              className={style.logo}
+            />
           </div>
           <div>
             {fullName}

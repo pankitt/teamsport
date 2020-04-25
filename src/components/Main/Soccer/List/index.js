@@ -16,7 +16,11 @@ const List = ({ league = [], title }) => (
       }) => (
         <div className={style.item} key={id}>
           <div className={style.image}>
-            <img src={logoUrl} alt={displayOfficialName} />
+            <img
+              src={logoUrl}
+              alt={displayOfficialName}
+              className={style.logo}
+            />
           </div>
           <div>
             {displayOfficialName}
