@@ -1,19 +1,26 @@
-const makeRequest = (endpoint) => async () => {
+const makeRequest = async () => {
+  const url = '/prod/v2/2019/teams.json';
+  const options = {
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    method: 'get'
+  };
+
   try {
-    const response = await fetch(endpoint);
+    const response = await fetch(url, options);
     const json = await response.json();
     const { error } = json;
 
-    if (error === 'yes') {
-      throw new Error(json);
+    if (error) {
+      const { message, code } = error;
+      throw new Error(message || code);
     }
+
     return json;
   } catch (error) {
-    return error;
+    throw new Error(error);
   }
 };
 
-export const getNba = () => {
-  const url = 'https://data.nba.net/prod/v2/2019/teams.json';
-  return makeRequest(url)();
-};
+export const getNba = () => makeRequest();
