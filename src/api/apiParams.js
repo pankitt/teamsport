@@ -39,3 +39,15 @@ export const getNhl = ({
 
   return makeRequest(url)();
 };
+
+export const getChl = ({
+  q = 'statistic-teams-21ec9dad81abe2e0240460d0-8f7d5c9a161f121955e7a148.json'
+}) => {
+  const formData = {
+    q
+  };
+  const formattedData = new URLSearchParams(formData).toString();
+  const url = `/api/s3?${formattedData}`;
+
+  return makeRequest(url)();
+};

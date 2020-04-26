@@ -12,5 +12,8 @@ export const LEAGUES = {
   },
   NHL: {
     TITLE: 'National Hockey League'
+  },
+  CHL: {
+    TITLE: 'Champions Hockey League'
   }
 };

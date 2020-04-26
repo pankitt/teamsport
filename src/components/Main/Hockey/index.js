@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { LEAGUES } from 'constants/leagues';
-import { useNhl } from 'hooks';
+import { useNhl, useChl } from 'hooks';
 import { Loader } from 'components/common';
 import List from 'components/Main/Hockey/List';
 import style from 'components/Main/index.module.css';
 
 const Hockey = () => {
   const nhlTitle = LEAGUES.NHL.TITLE;
-  const [NHL, isLoading] = useNhl();
+  const chlTitle = LEAGUES.CHL.TITLE;
+  const [NHL, isLoadingNhl] = useNhl();
+  const [CHL] = useChl();
   const [league, setLeague] = useState([]);
   const [title, setTitle] = useState(nhlTitle);
 
@@ -19,6 +21,10 @@ const Hockey = () => {
     setLeague(NHL);
     setTitle(nhlTitle);
   };
+  const CHLeague = () => {
+    setLeague(CHL);
+    setTitle(chlTitle);
+  };
 
   return (
     <div className={style.container}>
@@ -29,8 +35,14 @@ const Hockey = () => {
         >
           {nhlTitle}
         </span>
+        <span
+          className={style.link}
+          onClick={CHLeague}
+        >
+          {chlTitle}
+        </span>
       </div>
-      {isLoading ? <Loader /> : <List league={league} title={title} />}
+      {isLoadingNhl ? <Loader /> : <List league={league} title={title} />}
     </div>
   );
 };
