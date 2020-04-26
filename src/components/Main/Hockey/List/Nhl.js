@@ -22,7 +22,7 @@ const Nhl = ({ league = [], title }) => (
       }) => (
         <div className={style.item} key={id}>
           <div className={style.image}>
-            <div className={style.logo}>
+            <div className={style.logoSVG}>
               {svgLogo[abbreviation]}
             </div>
           </div>

@@ -45,15 +45,16 @@
   padding: 2px;
   box-shadow: 1px 1px 1px var(--color-black);
 }
-.item:hover {
-
-}
 .image {
   font-size: 8px;
   margin-right: 10px;
 }
 .logo {
-  width: 70px;
+  max-width: 80px;
+  max-height: 80px;
+}
+.logoSVG {
+  width: 90px;
 }
 .country {
   font-size: 10px;
