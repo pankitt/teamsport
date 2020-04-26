@@ -1,5 +1,4 @@
-const makeRequest = async () => {
-  const url = '/prod/v2/2019/teams.json';
+const makeRequest = async (url) => {
   const options = {
     headers: {
       'Content-Type': 'application/json'
@@ -23,4 +22,4 @@ const makeRequest = async () => {
   }
 };
 
-export const getNba = () => makeRequest();
+export const getNba = () => makeRequest('/prod/v2/2019/teams.json');

@@ -25,3 +25,17 @@ export const getUefa = ({
 
   return makeRequest(url)();
 };
+
+export const getNhl = ({
+  season = 20192020,
+  hydrate = 'record(overall),division,conference,team(nextSchedule(team),previousSchedule(team))'
+}) => {
+  const formData = {
+    hydrate,
+    season
+  };
+  const formattedData = new URLSearchParams(formData).toString();
+  const url = `https://statsapi.web.nhl.com/api/v1/standings?${formattedData}`;
+
+  return makeRequest(url)();
+};
