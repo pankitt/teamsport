@@ -24,6 +24,6 @@ export const useMlb = (season) => {
 
     return () => { cleanup = true; };
   }, [season]);
-console.log(teams);
+
   return [teams, isLoading];
 };
