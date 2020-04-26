@@ -5,6 +5,11 @@ import style from 'components/Main/index.module.css';
 const Nhl = ({ league = [], title }) => (
   <div>
     <div className={style.title}>
+      <img
+        src="https://www.flashscore.com/res/image/data/xlRuQfhD-d8noefNR.png"
+        alt="League"
+        className={style.league}
+      />
       {title}
       :
     </div>

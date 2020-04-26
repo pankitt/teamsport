@@ -12,6 +12,16 @@
   text-decoration: underline;
 }
 
+.league {
+  height: 50px;
+  vertical-align: middle;
+  border: 1px solid var(--color-black);
+  border-radius: 6px;
+  padding: 2px;
+  margin-right: 5px;
+  box-shadow: 1px 1px 1px var(--color-black);
+}
+
 .teams {
   display: flex;
   flex-direction: row;
@@ -30,12 +40,13 @@
   width: 32%;
   font-size: 18px;
   border: 1px solid var(--color-black);
-  border-radius: 2px;
+  border-radius: 4px;
   margin: 2px;
   padding: 2px;
+  box-shadow: 1px 1px 1px var(--color-black);
 }
 .item:hover {
-  box-shadow: 1px 1px 1px var(--color-black);
+
 }
 .image {
   font-size: 8px;
