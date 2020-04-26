@@ -56,6 +56,11 @@
 .logoSVG {
   width: 90px;
 }
+.logoSVGpad {
+  width: 60px;
+  max-height: 70px;
+  padding: 2px;
+}
 .country {
   font-size: 10px;
   font-style: italic;

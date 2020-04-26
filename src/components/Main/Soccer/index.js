@@ -8,7 +8,7 @@ import style from 'components/Main/index.module.css';
 const Soccer = () => {
   const uefaCLTitle = LEAGUES.UEFA_CHAMPIONS_LEAGUE.TITLE;
   const uefaELTitle = LEAGUES.UEFA_EUROPA_LEAGUE.TITLE;
-  const [UEFAChampionsLeague, isLoadingLC] = useUefa(LEAGUES.UEFA_CHAMPIONS_LEAGUE.ID);
+  const [UEFAChampionsLeague, isLoading] = useUefa(LEAGUES.UEFA_CHAMPIONS_LEAGUE.ID);
   const [UEFAEuropaLeague] = useUefa(LEAGUES.UEFA_EUROPA_LEAGUE.ID);
   const [league, setLeague] = useState([]);
   const [title, setTitle] = useState(uefaCLTitle);
@@ -42,7 +42,7 @@ const Soccer = () => {
           {uefaELTitle}
         </span>
       </div>
-      {isLoadingLC ? <Loader /> : <List league={league} title={title} />}
+      {isLoading ? <Loader /> : <List league={league} title={title} />}
     </div>
   );
 };

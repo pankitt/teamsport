@@ -8,7 +8,7 @@ import style from 'components/Main/index.module.css';
 const Hockey = () => {
   const nhlTitle = LEAGUES.NHL.TITLE;
   const chlTitle = LEAGUES.CHL.TITLE;
-  const [NHL, isLoadingNhl] = useNhl();
+  const [NHL, isLoading] = useNhl();
   const [CHL] = useChl();
   const [league, setLeague] = useState([]);
   const [title, setTitle] = useState(nhlTitle);
@@ -42,7 +42,7 @@ const Hockey = () => {
           {chlTitle}
         </span>
       </div>
-      {isLoadingNhl ? <Loader /> : <List league={league} title={title} />}
+      {isLoading ? <Loader /> : <List league={league} title={title} />}
     </div>
   );
 };

@@ -1,11 +1,11 @@
 export const LEAGUES = {
   UEFA_CHAMPIONS_LEAGUE: {
-    ID: 1,
-    TITLE: 'UEFA Champions League'
+    TITLE: 'UEFA Champions League',
+    ID: 1
   },
   UEFA_EUROPA_LEAGUE: {
-    ID: 14,
-    TITLE: 'UEFA Europa League'
+    TITLE: 'UEFA Europa League',
+    ID: 14
   },
   NBA: {
     TITLE: 'National Basketball Association'
@@ -15,5 +15,8 @@ export const LEAGUES = {
   },
   CHL: {
     TITLE: 'Champions Hockey League'
+  },
+  MLB: {
+    TITLE: 'Major League Baseball'
   }
 };
