@@ -6,10 +6,12 @@ import List from 'components/Main/Soccer/List';
 import style from 'components/Main/index.module.css';
 
 const Soccer = () => {
+  const uefaCLTitle = LEAGUES.UEFA_CHAMPIONS_LEAGUE.TITLE;
+  const uefaELTitle = LEAGUES.UEFA_EUROPA_LEAGUE.TITLE;
   const [UEFAChampionsLeague, isLoadingLC] = useUefa(LEAGUES.UEFA_CHAMPIONS_LEAGUE.ID);
   const [UEFAEuropaLeague, isLoadingLE] = useUefa(LEAGUES.UEFA_EUROPA_LEAGUE.ID);
   const [league, setLeague] = useState([]);
-  const [title, setTitle] = useState(LEAGUES.UEFA_CHAMPIONS_LEAGUE.TITLE);
+  const [title, setTitle] = useState(uefaCLTitle);
 
   useEffect(() => {
     setLeague(UEFAChampionsLeague);
@@ -17,11 +19,11 @@ const Soccer = () => {
 
   const championsLeague = () => {
     setLeague(UEFAChampionsLeague);
-    setTitle(LEAGUES.UEFA_CHAMPIONS_LEAGUE.TITLE);
+    setTitle(uefaCLTitle);
   };
   const europaLeague = () => {
     setLeague(UEFAEuropaLeague);
-    setTitle(LEAGUES.UEFA_EUROPA_LEAGUE.TITLE);
+    setTitle(uefaELTitle);
   };
 
   return (
@@ -31,13 +33,13 @@ const Soccer = () => {
           className={style.link}
           onClick={championsLeague}
         >
-          {LEAGUES.UEFA_CHAMPIONS_LEAGUE.TITLE}
+          {uefaCLTitle}
         </span>
         <span
           className={style.link}
           onClick={europaLeague}
         >
-          {LEAGUES.UEFA_EUROPA_LEAGUE.TITLE}
+          {uefaELTitle}
         </span>
       </div>
       {isLoadingLC || isLoadingLE ? <Loader /> : <List league={league} title={title} />}

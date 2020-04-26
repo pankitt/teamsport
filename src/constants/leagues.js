@@ -9,5 +9,8 @@ export const LEAGUES = {
   },
   NBA: {
     TITLE: 'National Basketball Association'
+  },
+  NHL: {
+    TITLE: 'National Hockey League'
   }
 };

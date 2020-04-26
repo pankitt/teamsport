@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { LEAGUES } from 'constants/leagues';
-import { useNba } from 'hooks';
+import { useNhl } from 'hooks';
 import { Loader } from 'components/common';
-import List from 'components/Main/Basketball/List';
+import List from 'components/Main/Hockey/List';
 import style from 'components/Main/index.module.css';
 
-const Basketball = () => {
-  const nbaTitle = LEAGUES.NBA.TITLE;
-  const [NBA, isLoading] = useNba();
+const Hockey = () => {
+  const nhlTitle = LEAGUES.NHL.TITLE;
+  const [NHL, isLoading] = useNhl();
   const [league, setLeague] = useState([]);
-  const [title, setTitle] = useState(nbaTitle);
+  const [title, setTitle] = useState(nhlTitle);
 
   useEffect(() => {
-    setLeague(NBA);
-  }, [NBA]);
+    setLeague(NHL);
+  }, [NHL]);
 
-  const NBALeague = () => {
-    setLeague(NBA);
-    setTitle(nbaTitle);
+  const NHLeague = () => {
+    setLeague(NHL);
+    setTitle(nhlTitle);
   };
 
   return (
@@ -25,9 +25,9 @@ const Basketball = () => {
       <div className={style.links}>
         <span
           className={style.link}
-          onClick={NBALeague}
+          onClick={NHLeague}
         >
-          {nbaTitle}
+          {nhlTitle}
         </span>
       </div>
       {isLoading ? <Loader /> : <List league={league} title={title} />}
@@ -35,4 +35,4 @@ const Basketball = () => {
   );
 };
 
-export default Basketball;
+export default Hockey;
