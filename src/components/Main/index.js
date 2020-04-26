@@ -6,6 +6,7 @@ import Soccer from 'components/Main/Soccer';
 import Basketball from 'components/Main/Basketball';
 import Hockey from 'components/Main/Hockey';
 import Baseball from 'components/Main/Baseball';
+import Football from 'components/Main/Football';
 
 const Main = () => (
   <div>
@@ -15,7 +16,7 @@ const Main = () => (
       <Route exact path={`/${SPORTS.BASKETBALL}`} component={Basketball} />
       <Route exact path={`/${SPORTS.HOCKEY}`} component={Hockey} />
       <Route exact path={`/${SPORTS.BASEBALL}`} component={Baseball} />
-      <Route exact path={`/${SPORTS.FOOTBALL}`}><div>{SPORTS.FOOTBALL}</div></Route>
+      <Route exact path={`/${SPORTS.FOOTBALL}`} component={Football} />
       <Route exact path={`/${SPORTS.RUGBY}`}><div>{SPORTS.RUGBY}</div></Route>
     </Switch>
   </div>

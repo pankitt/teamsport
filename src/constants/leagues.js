@@ -18,5 +18,8 @@ export const LEAGUES = {
   },
   MLB: {
     TITLE: 'Major League Baseball'
+  },
+  NFL: {
+    TITLE: 'National Football League'
   }
 };

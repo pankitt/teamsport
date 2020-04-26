@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { LEAGUES } from 'constants/leagues';
-import { useMlb } from 'hooks';
+import { useNfl } from 'hooks';
 import { Loader } from 'components/common';
-import List from 'components/Main/Baseball/List';
+import List from 'components/Main/Football/List';
 import style from 'components/Main/index.module.css';
 
-const Baseball = () => {
-  const nbaTitle = LEAGUES.MLB.TITLE;
-  const [MLB, isLoading] = useMlb();
+const Football = () => {
+  const nflTitle = LEAGUES.NFL.TITLE;
+  const [NFL, isLoading] = useNfl();
   const [league, setLeague] = useState([]);
-  const [title, setTitle] = useState(nbaTitle);
+  const [title, setTitle] = useState(nflTitle);
 
   useEffect(() => {
-    setLeague(MLB);
-  }, [MLB]);
+    setLeague(NFL);
+  }, [NFL]);
 
-  const MLBLeague = () => {
-    setLeague(MLB);
-    setTitle(nbaTitle);
+  const NFLeague = () => {
+    setLeague(NFL);
+    setTitle(nflTitle);
   };
 
   return (
@@ -25,9 +25,9 @@ const Baseball = () => {
       <div className={style.links}>
         <span
           className={style.link}
-          onClick={MLBLeague}
+          onClick={NFLeague}
         >
-          {nbaTitle}
+          {nflTitle}
         </span>
       </div>
       {isLoading ? <Loader /> : <List league={league} title={title} />}
@@ -35,4 +35,4 @@ const Baseball = () => {
   );
 };
 
-export default Baseball;
+export default Football;

@@ -71,3 +71,15 @@ export const getMlb = ({
 
   return makeRequest(url)();
 };
+
+export const getNfl = ({
+  apikey = 'jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq'
+}) => {
+  const formData = {
+    apikey
+  };
+  const formattedData = new URLSearchParams(formData).toString();
+  const url = `https://api.foxsports.com/sportsdata/v1/football/nfl/teams.json?${formattedData}`;
+
+  return makeRequest(url)();
+};
