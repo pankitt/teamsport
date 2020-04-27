@@ -22,6 +22,9 @@ export const LEAGUES = {
   CHL: {
     TITLE: 'Champions Hockey League'
   },
+  KHL: {
+    TITLE: 'Kontinental Hockey League'
+  },
   MLB: {
     TITLE: 'Major League Baseball'
   },

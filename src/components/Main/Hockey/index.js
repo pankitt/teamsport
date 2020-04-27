@@ -8,6 +8,7 @@ import style from 'components/Main/index.module.css';
 const Hockey = () => {
   const nhlTitle = LEAGUES.NHL.TITLE;
   const chlTitle = LEAGUES.CHL.TITLE;
+  const khlTitle = LEAGUES.KHL.TITLE;
 
   const [NHL, isLoading] = useNhl();
   const [CHL] = useChl();
@@ -26,6 +27,9 @@ const Hockey = () => {
     setLeague(CHL);
     setTitle(chlTitle);
   };
+  const khlLeague = () => {
+    setTitle(khlTitle);
+  };
 
   return (
     <div className={style.container}>
@@ -41,6 +45,12 @@ const Hockey = () => {
           onClick={chlLeague}
         >
           {chlTitle}
+        </span>
+        <span
+          className={style.link}
+          onClick={khlLeague}
+        >
+          {khlTitle}
         </span>
       </div>
       {isLoading ? <Loader /> : <List league={league} title={title} />}
