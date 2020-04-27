@@ -8,6 +8,7 @@ import style from 'components/Main/index.module.css';
 const Hockey = () => {
   const nhlTitle = LEAGUES.NHL.TITLE;
   const chlTitle = LEAGUES.CHL.TITLE;
+
   const [NHL, isLoading] = useNhl();
   const [CHL] = useChl();
   const [league, setLeague] = useState([]);
@@ -17,11 +18,11 @@ const Hockey = () => {
     setLeague(NHL);
   }, [NHL]);
 
-  const NHLeague = () => {
+  const nhlLeague = () => {
     setLeague(NHL);
     setTitle(nhlTitle);
   };
-  const CHLeague = () => {
+  const chlLeague = () => {
     setLeague(CHL);
     setTitle(chlTitle);
   };
@@ -31,13 +32,13 @@ const Hockey = () => {
       <div className={style.links}>
         <span
           className={style.link}
-          onClick={NHLeague}
+          onClick={nhlLeague}
         >
           {nhlTitle}
         </span>
         <span
           className={style.link}
-          onClick={CHLeague}
+          onClick={chlLeague}
         >
           {chlTitle}
         </span>

@@ -7,6 +7,8 @@ import style from 'components/Main/index.module.css';
 
 const Basketball = () => {
   const nbaTitle = LEAGUES.NBA.TITLE;
+  const elTitle = LEAGUES.EURO_LEAGUE.TITLE;
+
   const [NBA, isLoading] = useNba();
   const [league, setLeague] = useState([]);
   const [title, setTitle] = useState(nbaTitle);
@@ -15,9 +17,13 @@ const Basketball = () => {
     setLeague(NBA);
   }, [NBA]);
 
-  const NBALeague = () => {
+  const nbaLeague = () => {
     setLeague(NBA);
     setTitle(nbaTitle);
+  };
+  const euroLeague = () => {
+    setLeague([]);
+    setTitle(elTitle);
   };
 
   return (
@@ -25,9 +31,15 @@ const Basketball = () => {
       <div className={style.links}>
         <span
           className={style.link}
-          onClick={NBALeague}
+          onClick={nbaLeague}
         >
           {nbaTitle}
+        </span>
+        <span
+          className={style.link}
+          onClick={euroLeague}
+        >
+          {elTitle}
         </span>
       </div>
       {isLoading ? <Loader /> : <List league={league} title={title} />}

@@ -10,15 +10,21 @@ export const LEAGUES = {
   MLS: {
     TITLE: 'Major League Soccer'
   },
+
   NBA: {
     TITLE: 'National Basketball Association'
   },
+  EURO_LEAGUE: {
+    TITLE: 'EuroLeague'
+  },
+
   NHL: {
     TITLE: 'National Hockey League'
   },
   CHL: {
     TITLE: 'Champions Hockey League'
   },
+
   MLB: {
     TITLE: 'Major League Baseball'
   },

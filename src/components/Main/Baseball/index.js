@@ -7,6 +7,7 @@ import style from 'components/Main/index.module.css';
 
 const Baseball = () => {
   const nbaTitle = LEAGUES.MLB.TITLE;
+
   const [MLB, isLoading] = useMlb();
   const [league, setLeague] = useState([]);
   const [title, setTitle] = useState(nbaTitle);
@@ -15,7 +16,7 @@ const Baseball = () => {
     setLeague(MLB);
   }, [MLB]);
 
-  const MLBLeague = () => {
+  const mlbLeague = () => {
     setLeague(MLB);
     setTitle(nbaTitle);
   };
@@ -25,7 +26,7 @@ const Baseball = () => {
       <div className={style.links}>
         <span
           className={style.link}
-          onClick={MLBLeague}
+          onClick={mlbLeague}
         >
           {nbaTitle}
         </span>
