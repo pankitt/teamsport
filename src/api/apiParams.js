@@ -101,3 +101,15 @@ export const getNfl = ({
 
   return makeRequest(url)();
 };
+
+export const getCfl = ({
+  type = 'json'
+}) => {
+  const formData = {
+    type
+  };
+  const formattedData = new URLSearchParams(formData).toString();
+  const url = `https://stats.tsn.ca/GET/urn:tsn:cfl:teams?${formattedData}`;
+
+  return makeRequest(url)();
+};
