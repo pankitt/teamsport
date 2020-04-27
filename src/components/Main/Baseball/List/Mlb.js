@@ -28,7 +28,7 @@ const Nhl = ({ league = [], title }) => (
           </div>
           <div>
             {name}
-            <div className={style.country}>{conference.name}</div>
+            <div className={style.country}>{conference && conference.name}</div>
           </div>
         </div>
       ))}

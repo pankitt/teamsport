@@ -9,6 +9,13 @@ module.exports = (app) => {
     changeOrigin: true,
     cookieDomainRewrite: ''
   }));
+  app.use([
+    '/graphql'
+  ], createProxyMiddleware({
+    target: 'https://scores24.live',
+    secure: false,
+    changeOrigin: true
+  }));
 
   app.use([
     '/api/s3'

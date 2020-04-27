@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { LEAGUES } from 'constants/leagues';
 import { useNba } from 'hooks';
+import { EuroLeagueMock } from 'components/mock';
 import { Loader } from 'components/common';
 import List from 'components/Main/Basketball/List';
 import style from 'components/Main/index.module.css';
@@ -10,6 +11,7 @@ const Basketball = () => {
   const elTitle = LEAGUES.EURO_LEAGUE.TITLE;
 
   const [NBA, isLoading] = useNba();
+  const el = EuroLeagueMock.data.standings.map(({ team }) => team).flat();
   const [league, setLeague] = useState([]);
   const [title, setTitle] = useState(nbaTitle);
 
@@ -22,7 +24,7 @@ const Basketball = () => {
     setTitle(nbaTitle);
   };
   const euroLeague = () => {
-    setLeague([]);
+    setLeague(el);
     setTitle(elTitle);
   };
 

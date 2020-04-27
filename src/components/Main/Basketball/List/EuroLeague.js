@@ -1,11 +1,12 @@
 import React from 'react';
+import { countryAbbr } from 'components/utils';
 import style from 'components/Main/index.module.css';
 
-const Chl = ({ league = [], title }) => (
+const EuroLeague = ({ league = [], title }) => (
   <div>
     <div className={style.title}>
       <img
-        src="https://www.flashscore.com/res/image/data/fsPiS59j-hrADtmUL.png"
+        src="https://www.flashscore.com/res/image/data/bTE9GzCO-4UukMJVC.png"
         alt="League"
         className={style.league}
       />
@@ -14,21 +15,22 @@ const Chl = ({ league = [], title }) => (
     </div>
     <div className={style.teams}>
       {league.length > 0 && league.map(({
-        externalId,
+        slug,
+        logo,
         name,
         country
       }) => (
-        <div className={style.item} key={externalId}>
+        <div className={style.item} key={slug}>
           <div className={style.image}>
             <img
-              src={`https://res.cloudinary.com/chl-production/image/upload/c_fit,dpr_1.0,f_webp,g_center,h_133,q_auto:low,w_150/v1/chl-prod/assets/teams/${externalId}`}
+              src={logo}
               alt={name}
               className={style.logo}
             />
           </div>
           <div>
             {name}
-            <div className={style.country}>{country && country.name}</div>
+            <div className={style.country}>{country && countryAbbr(country.iso)}</div>
           </div>
         </div>
       ))}
@@ -36,4 +38,4 @@ const Chl = ({ league = [], title }) => (
   </div>
 );
 
-export default Chl;
+export default EuroLeague;
