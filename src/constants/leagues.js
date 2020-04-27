@@ -7,6 +7,9 @@ export const LEAGUES = {
     TITLE: 'UEFA Europa League',
     ID: 14
   },
+  MLS: {
+    TITLE: 'Major League Soccer'
+  },
   NBA: {
     TITLE: 'National Basketball Association'
   },

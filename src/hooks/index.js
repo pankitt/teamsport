@@ -1,5 +1,6 @@
 export { useChl } from './useChl';
 export { useMlb } from './useMlb';
+export { useMls } from './useMls';
 export { useNba } from './useNba';
 export { useNfl } from './useNfl';
 export { useNhl } from './useNhl';

@@ -26,6 +26,24 @@ export const getUefa = ({
   return makeRequest(url)();
 };
 
+export const getMls = ({
+  conference,
+  c = undefined,
+  module = 'football',
+  type = 'standing'
+}) => {
+  const formData = {
+    conference,
+    c,
+    module,
+    type
+  };
+  const formattedData = new URLSearchParams(formData).toString();
+  const url = `https://sportapi.widgets.sports.gracenote.com/football/gettable/phaseid/14308${conference}/languagecode/2.json?${formattedData}`;
+
+  return makeRequest(url)();
+};
+
 export const getNhl = ({
   season = 20192020,
   hydrate = 'record(overall),division,conference,team(nextSchedule(team),previousSchedule(team))'

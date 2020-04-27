@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { LEAGUES } from 'constants/leagues';
-import { useUefa } from 'hooks';
+import { useUefa, useMls } from 'hooks';
 import { Loader } from 'components/common';
 import List from 'components/Main/Soccer/List';
 import style from 'components/Main/index.module.css';
@@ -8,8 +8,12 @@ import style from 'components/Main/index.module.css';
 const Soccer = () => {
   const uefaCLTitle = LEAGUES.UEFA_CHAMPIONS_LEAGUE.TITLE;
   const uefaELTitle = LEAGUES.UEFA_EUROPA_LEAGUE.TITLE;
+  const mlsTitle = LEAGUES.MLS.TITLE;
+
   const [UEFAChampionsLeague, isLoading] = useUefa(LEAGUES.UEFA_CHAMPIONS_LEAGUE.ID);
   const [UEFAEuropaLeague] = useUefa(LEAGUES.UEFA_EUROPA_LEAGUE.ID);
+  const [MLSWest] = useMls(1);
+  const [MLSEast] = useMls(2);
   const [league, setLeague] = useState([]);
   const [title, setTitle] = useState(uefaCLTitle);
 
@@ -24,6 +28,11 @@ const Soccer = () => {
   const europaLeague = () => {
     setLeague(UEFAEuropaLeague);
     setTitle(uefaELTitle);
+  };
+  const mlsLeague = () => {
+    const mls = [...MLSWest, ...MLSEast];
+    setLeague(mls);
+    setTitle(mlsTitle);
   };
 
   return (
@@ -40,6 +49,12 @@ const Soccer = () => {
           onClick={europaLeague}
         >
           {uefaELTitle}
+        </span>
+        <span
+          className={style.link}
+          onClick={mlsLeague}
+        >
+          {mlsTitle}
         </span>
       </div>
       {isLoading ? <Loader /> : <List league={league} title={title} />}
