@@ -7,7 +7,8 @@ module.exports = (app) => {
     target: 'https://data.nba.net',
     secure: false,
     changeOrigin: true,
-    cookieDomainRewrite: ''
+    cookieDomainRewrite: '',
+    cookiePathRewrite: ''
   }));
   app.use([
     '/graphql'
