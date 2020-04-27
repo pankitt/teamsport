@@ -34,7 +34,7 @@ const Nfl = ({ league = [], title }) => {
           <div className={style.item} key={id}>
             <div className={style.image}>
               <img
-                src={`https://static.nfl.com/static/site/img/logos/svg/teams/${abbreviation === 'LAR' ? 'LA' : abbreviation}.svg`}
+                src={`/static/site/img/logos/svg/teams/${abbreviation === 'LAR' ? 'LA' : abbreviation}.svg`}
                 alt={name}
                 className={style.logoSVG}
               />

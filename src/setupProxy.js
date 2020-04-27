@@ -6,7 +6,8 @@ module.exports = (app) => {
   ], createProxyMiddleware({
     target: 'https://data.nba.net',
     secure: false,
-    changeOrigin: true
+    changeOrigin: true,
+    cookieDomainRewrite: ''
   }));
 
   app.use([
@@ -15,5 +16,14 @@ module.exports = (app) => {
     target: 'https://www.championshockeyleague.com',
     secure: false,
     changeOrigin: true
+  }));
+
+  app.use([
+    '/static/site'
+  ], createProxyMiddleware({
+    target: 'https://static.nfl.com',
+    secure: false,
+    changeOrigin: true,
+    cookieDomainRewrite: ''
   }));
 };
