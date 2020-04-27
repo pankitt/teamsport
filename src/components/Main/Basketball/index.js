@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { LEAGUES } from 'constants/leagues';
 import { useNba } from 'hooks';
-import { EuroLeagueMock } from 'components/mock';
+import { EuroLeagueMock } from 'mock';
 import { Loader } from 'components/common';
 import List from 'components/Main/Basketball/List';
 import style from 'components/Main/index.module.css';

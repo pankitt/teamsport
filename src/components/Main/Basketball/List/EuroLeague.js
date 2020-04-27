@@ -1,5 +1,5 @@
 import React from 'react';
-import { countryAbbr } from 'components/utils';
+import { countryAbbr } from 'utils';
 import style from 'components/Main/index.module.css';
 
 const EuroLeague = ({ league = [], title }) => (
