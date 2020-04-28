@@ -12,7 +12,7 @@ const makeRequest = (endpoint) => async () => {
     return error;
   }
 };
-
+// https://www.uefa.com/
 export const getUefa = ({
   league,
   language = 'EN'
@@ -25,7 +25,7 @@ export const getUefa = ({
 
   return makeRequest(url)();
 };
-
+// https://scores.prosoccerusa.com/soccer/mls/teams
 export const getMls = ({
   conference,
   c = undefined,
@@ -43,7 +43,7 @@ export const getMls = ({
 
   return makeRequest(url)();
 };
-
+// https://www.nhl.com/
 export const getNhl = ({
   season = 20192020,
   hydrate = 'record(overall),division,conference,team(nextSchedule(team),previousSchedule(team))'
@@ -57,7 +57,7 @@ export const getNhl = ({
 
   return makeRequest(url)();
 };
-
+// https://www.championshockeyleague.com/
 export const getChl = ({
   q = 'statistic-teams-21ec9dad81abe2e0240460d0-8f7d5c9a161f121955e7a148.json'
 }) => {
@@ -69,7 +69,7 @@ export const getChl = ({
 
   return makeRequest(url)();
 };
-
+// https://www.mlb.com/
 export const getMlb = ({
   season = 2019,
   date = '2019-09-29',
@@ -89,7 +89,7 @@ export const getMlb = ({
 
   return makeRequest(url)();
 };
-
+// https://www.foxsports.com/
 export const getNfl = ({
   apikey = 'jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq'
 }) => {
@@ -101,7 +101,7 @@ export const getNfl = ({
 
   return makeRequest(url)();
 };
-
+// https://www.tsn.ca/
 export const getCfl = ({
   type = 'json'
 }) => {
