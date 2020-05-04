@@ -1,39 +1,49 @@
 import React from 'react';
+import { Flags } from 'components/common';
 import style from 'components/Main/index.module.css';
 
-const Nhl = ({ league = [], title }) => (
-  <div>
-    <div className={style.title}>
-      <img
-        src="https://www.flashscore.com/res/image/data/vejtzfhU-CdjtEF4s.png"
-        alt="League"
-        className={style.league}
-      />
-      {title}
-      :
-    </div>
-    <div className={style.teams}>
-      {league.length > 0 && league.map(({
-        id,
-        name,
-        league: conference
-      }) => (
-        <div className={style.item} key={id}>
-          <div className={style.image}>
-            <img
-              src={`https://www.mlbstatic.com/team-logos/${id}.svg`}
-              alt={name}
-              className={style.logoSVGpad}
-            />
-          </div>
-          <div>
-            {name}
-            <div className={style.country}>{conference && conference.name}</div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-);
+const Mlb = ({ league = [], title }) => {
+  const countryAbbr = (abbr) => {
+    if (abbr === 'TOR') {
+      return 'CAN';
+    }
+    return 'USA';
+  };
 
-export default Nhl;
+  return (
+    <div>
+      <div className={style.title}>
+        <img
+          src="https://www.flashscore.com/res/image/data/vejtzfhU-CdjtEF4s.png"
+          alt="League"
+          className={style.league}
+        />
+        {title}
+        :
+      </div>
+      <div className={style.teams}>
+        {league.length > 0 && league.map(({
+          id,
+          name,
+          abbreviation
+        }) => (
+          <div className={style.item} key={id}>
+            <div className={style.image}>
+              <img
+                src={`https://www.mlbstatic.com/team-logos/${id}.svg`}
+                alt={name}
+                className={style.logoSVGpad}
+              />
+            </div>
+            <div>
+              {name}
+              <Flags name={countryAbbr(abbreviation)} code={countryAbbr(abbreviation)} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Mlb;

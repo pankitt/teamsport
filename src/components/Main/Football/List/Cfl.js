@@ -2,7 +2,7 @@ import React from 'react';
 import { Flags } from 'components/common';
 import style from 'components/Main/index.module.css';
 
-const Nfl = ({ league = [], title }) => (
+const Cfl = ({ league = [], title }) => (
   <div>
     <div className={style.title}>
       <img
@@ -40,4 +40,4 @@ const Nfl = ({ league = [], title }) => (
   </div>
 );
 
-export default Nfl;
+export default Cfl;
