@@ -1,4 +1,5 @@
 import React from 'react';
+import { Flags } from 'components/common';
 import style from 'components/Main/index.module.css';
 
 const Chl = ({ league = [], title }) => (
@@ -28,7 +29,7 @@ const Chl = ({ league = [], title }) => (
           </div>
           <div>
             {name}
-            <div className={style.country}>{country && country.name}</div>
+            <Flags name={country && country.name} code={country && country.code} />
           </div>
         </div>
       ))}

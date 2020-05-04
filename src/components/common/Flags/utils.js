@@ -1,5 +1,20 @@
+export const flagAbbr = (abbr) => {
+  switch (abbr) {
+    case 'KOS':
+      return 'KVX';
+    case 'GRC':
+      return 'GRE';
+    case 'DEU':
+      return 'GER';
+    default:
+      return abbr;
+  }
+};
+
 export const countryAbbr = (abbr) => {
   switch (abbr) {
+    case 'CAN':
+      return 'Canada';
     case 'TUR':
       return 'Turkey';
     case 'ESP':

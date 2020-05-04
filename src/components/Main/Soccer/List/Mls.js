@@ -1,5 +1,6 @@
 import React from 'react';
 import { MLS_LOGO } from 'components/Main/Soccer/constants';
+import { Flags } from 'components/common';
 import style from 'components/Main/index.module.css';
 
 const Mls = ({ league = [], title }) => {
@@ -29,7 +30,8 @@ const Mls = ({ league = [], title }) => {
           n_TeamID: id,
           c_TeamShort: abbr,
           c_Team: name,
-          c_Phase: conference
+          c_Phase: conference,
+          c_TeamNatioShort: country
         }) => (
           <div className={style.item} key={id}>
             <div className={style.image}>
@@ -41,7 +43,7 @@ const Mls = ({ league = [], title }) => {
             </div>
             <div>
               {name}
-              <div className={style.country}>{conference}</div>
+              <Flags name={country} code={country} />
             </div>
           </div>
         ))}

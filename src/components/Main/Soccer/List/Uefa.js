@@ -1,5 +1,6 @@
 import React from 'react';
 import { LEAGUES } from 'constants/leagues';
+import { Flags } from 'components/common';
 import style from 'components/Main/index.module.css';
 
 const Uefa = ({ league = [], title }) => (
@@ -27,7 +28,8 @@ const Uefa = ({ league = [], title }) => (
         id,
         logoUrl,
         displayOfficialName,
-        countryName
+        countryName,
+        countryCode
       }) => (
         <div className={style.item} key={id}>
           <div className={style.image}>
@@ -39,7 +41,7 @@ const Uefa = ({ league = [], title }) => (
           </div>
           <div>
             {displayOfficialName}
-            <div className={style.country}>{countryName}</div>
+            <Flags name={countryName} code={countryCode} />
           </div>
         </div>
       ))}

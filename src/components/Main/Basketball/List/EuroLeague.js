@@ -1,5 +1,5 @@
 import React from 'react';
-import { countryAbbr } from 'utils';
+import { Flags } from 'components/common';
 import style from 'components/Main/index.module.css';
 
 const EuroLeague = ({ league = [], title }) => (
@@ -30,7 +30,7 @@ const EuroLeague = ({ league = [], title }) => (
           </div>
           <div>
             {name}
-            <div className={style.country}>{country && countryAbbr(country.iso)}</div>
+            <Flags name={country && country.iso} code={country && country.iso} />
           </div>
         </div>
       ))}

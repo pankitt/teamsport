@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+}
+.flag {
+  width: 20px;
+  margin-right: 5px;
+}
+.country {
+  font-style: italic;
+}
