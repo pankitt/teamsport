@@ -1,3 +1,4 @@
+export { useAfl } from './useAfl';
 export { useCfl } from './useCfl';
 export { useChl } from './useChl';
 export { useEuroLeague } from './useEuroLeague';

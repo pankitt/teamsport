@@ -1,5 +1,8 @@
 const makeRequest = async (url, method, params) => {
   const options = {
+    headers: {
+      'Content-Type': 'application/json'
+    },
     method,
     body: params && JSON.stringify({
       ...params

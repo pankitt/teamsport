@@ -33,5 +33,8 @@ export const LEAGUES = {
   },
   CFL: {
     TITLE: 'Canadian Football League'
+  },
+  AFL: {
+    TITLE: 'Australian Football League'
   }
 };

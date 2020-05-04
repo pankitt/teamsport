@@ -1,6 +1,12 @@
 const makeRequest = (endpoint) => async () => {
+  const options = {
+    headers: {
+      Accept: 'application/json'
+    }
+  };
+
   try {
-    const response = await fetch(endpoint);
+    const response = await fetch(endpoint, options);
     const json = await response.json();
     const { error } = json;
 
@@ -110,6 +116,18 @@ export const getCfl = ({
   };
   const formattedData = new URLSearchParams(formData).toString();
   const url = `https://stats.tsn.ca/GET/urn:tsn:cfl:teams?${formattedData}`;
+
+  return makeRequest(url)();
+};
+// https://www.dratings.com/sports/australian-football-league-ratings/
+export const getAfl = ({
+  seasonId = 'c462d801-23d5-5024-ba51-f5aa906b54ea'
+}) => {
+  const formData = {
+    season_id: seasonId
+  };
+  const formattedData = new URLSearchParams(formData).toString();
+  const url = `/sports/australian-football-league-ratings/?${formattedData}`;
 
   return makeRequest(url)();
 };

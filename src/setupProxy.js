@@ -34,4 +34,11 @@ module.exports = (app) => {
     changeOrigin: true,
     cookieDomainRewrite: ''
   }));
+  app.use([
+    '/sports'
+  ], createProxyMiddleware({
+    target: 'https://www.dratings.com',
+    secure: false,
+    changeOrigin: true
+  }));
 };
