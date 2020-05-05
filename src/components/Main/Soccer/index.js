@@ -6,12 +6,12 @@ import List from 'components/Main/Soccer/List';
 import style from 'components/Main/index.module.css';
 
 const Soccer = () => {
-  const uefaCLTitle = LEAGUES.UEFA_CHAMPIONS_LEAGUE.TITLE;
-  const uefaELTitle = LEAGUES.UEFA_EUROPA_LEAGUE.TITLE;
+  const uefaCLTitle = LEAGUES.UEFA_CL.TITLE;
+  const uefaELTitle = LEAGUES.UEFA_EL.TITLE;
   const mlsTitle = LEAGUES.MLS.TITLE;
 
-  const [UEFAChampionsLeague, isLoading] = useUefa(LEAGUES.UEFA_CHAMPIONS_LEAGUE.ID);
-  const [UEFAEuropaLeague] = useUefa(LEAGUES.UEFA_EUROPA_LEAGUE.ID);
+  const [UEFAChampionsLeague, isLoading] = useUefa(1);
+  const [UEFAEuropaLeague] = useUefa(14);
   const [MLSWest] = useMls(1);
   const [MLSEast] = useMls(2);
   const [league, setLeague] = useState([]);

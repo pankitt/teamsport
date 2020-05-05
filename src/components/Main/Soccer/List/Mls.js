@@ -1,4 +1,5 @@
 import React from 'react';
+import { LEAGUES } from 'constants/leagues';
 import { MLS_LOGO } from 'components/Main/Soccer/constants';
 import { Flags } from 'components/common';
 import style from 'components/Main/index.module.css';
@@ -18,7 +19,7 @@ const Mls = ({ league = [], title }) => {
     <div>
       <div className={style.title}>
         <img
-          src="https://www.flashscore.com/res/image/data/WlePe6U1-IBnJkea7.png"
+          src={LEAGUES.MLS.LOGO}
           alt="League"
           className={style.league}
         />

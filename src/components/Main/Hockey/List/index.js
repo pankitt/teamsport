@@ -8,7 +8,7 @@ const List = ({ league, title }) => (
   <div>
     {title === LEAGUES.NHL.TITLE && <Nhl league={league} title={title} />}
     {title === LEAGUES.CHL.TITLE && <Chl league={league} title={title} />}
-    {title === LEAGUES.KHL.TITLE && <EmptyList title={title} logo="https://www.flashscore.com/res/image/data/zDv6cBiU-dpvIrs7K.png" />}
+    {title === LEAGUES.KHL.TITLE && <EmptyList title={title} logo={LEAGUES.KHL.LOGO} />}
   </div>
 );
 
