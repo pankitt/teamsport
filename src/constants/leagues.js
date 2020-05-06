@@ -54,6 +54,11 @@ export const LEAGUES = {
     LOGO: `${logo}bTE9GzCO-4UukMJVC.png`,
     LINK: 'https://en.wikipedia.org/wiki/EuroLeague'
   },
+  EUROCUP: {
+    TITLE: 'EuroCup Basketball',
+    LOGO: `${logo}8tTRYDEO-pfMJPUtU.png`,
+    LINK: 'https://en.wikipedia.org/wiki/EuroCup_Basketball'
+  },
   BAL: {
     TITLE: 'Basketball Africa League',
     LOGO: '',
